@@ -37,10 +37,10 @@ export default function Home() {
   }, [currentTime]);
 
   const environmentStyles = {
-    day: "bg-gradient-to-b from-green-500 to-green-200",
-    night: "bg-gradient-to-b from-black-900 to-black-700",
-    rain: "bg-gradient-to-b from-blue-700 to-blue-500",
-    ocean: "bg-gradient-to-b from-yellow-500 to-yellow-400",
+    day: "bg-gradient-to-b from-green-500 to-green-400",
+    night: "bg-gradient-to-b from-black-900 to-black-800",
+    rain: "bg-gradient-to-b from-blue-700 to-blue-600",
+    ocean: "bg-gradient-to-b from-yellow-600 to-yellow-500",
   };
 
   const changeEnvironment = (env: "day" | "night" | "rain" | "ocean") => {
