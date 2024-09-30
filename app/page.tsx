@@ -16,10 +16,11 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [currentTime, setCurrentTime] = useState("");
-  const [activeEnvironment, setActiveEnvironment] = useState("day");
+  const [activeEnvironment, setActiveEnvironment] = useState<"day" | "night" | "rain" | "ocean">("day");
   const [showDemo, setShowDemo] = useState(false);
 
   useEffect(() => {
+    console.log(currentTime);
     const timer = setInterval(() => {
       const now = new Date();
       setCurrentTime(
@@ -33,7 +34,7 @@ export default function Home() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [currentTime]);
 
   const environmentStyles = {
     day: "bg-gradient-to-b from-green-500 to-green-200",
@@ -42,7 +43,7 @@ export default function Home() {
     ocean: "bg-gradient-to-b from-yellow-500 to-yellow-400",
   };
 
-  const changeEnvironment = (env) => {
+  const changeEnvironment = (env: "day" | "night" | "rain" | "ocean") => {
     setActiveEnvironment(env);
   };
 
@@ -140,7 +141,7 @@ export default function Home() {
               key={env}
               whileHover={{ scale: 1.2, rotate: 15 }}
               whileTap={{ scale: 0.9 }}
-              onClick={() => changeEnvironment(env)}
+              onClick={() => changeEnvironment(env as "day" | "night" | "rain" | "ocean")}
               className={`p-3 rounded-full ${
                 activeEnvironment === env ? "bg-white bg-opacity-30" : ""
               }`}
@@ -218,7 +219,7 @@ export default function Home() {
                 Stress is Overwhelming
               </h3>
               <p className="text-xl font-raleway mb-6">
-                In today's fast-paced world, people struggle with managing
+                In today&apos;s fast-paced world, people struggle with managing
                 stress in the workplace and at home. The lack of personalized
                 solutions for stress relief leads to:
               </p>
@@ -344,7 +345,7 @@ export default function Home() {
               </h3>
               <p className="text-xl font-raleway mb-6">
                 Our REST concept is at the core of every experience we create.
-                It's designed to guide you through a journey of complete
+                It&apos;s designed to guide you through a journey of complete
                 relaxation and transformation.
               </p>
               <ul className="space-y-4 text-lg font-raleway">
@@ -481,7 +482,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-2xl mt-16 text-center font-raleway font-light"
           >
-            Investing in stress management is not just good for employees—it's
+            Investing in stress management is not just good for employees—it&apos;s
             crucial for business success.
           </motion.p>
         </div>
@@ -544,7 +545,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-md mx-auto"
           >
-            {["Name", "Email", "Message"].map((field, index) => (
+            {["Name", "Email", "Message"].map((field) => (
               <div key={field} className="mb-8">
                 <label
                   htmlFor={field.toLowerCase()}
