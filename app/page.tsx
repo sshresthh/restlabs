@@ -36,10 +36,10 @@ export default function Home() {
   }, []);
 
   const environmentStyles = {
-    day: "bg-gradient-to-b from-sky-400 to-sky-200",
-    night: "bg-gradient-to-b from-indigo-900 to-purple-800",
-    rain: "bg-gradient-to-b from-gray-700 to-gray-500",
-    ocean: "bg-gradient-to-b from-blue-600 to-blue-400",
+    day: "bg-gradient-to-b from-green-500 to-green-200",
+    night: "bg-gradient-to-b from-black-900 to-black-700",
+    rain: "bg-gradient-to-b from-blue-700 to-blue-500",
+    ocean: "bg-gradient-to-b from-yellow-500 to-yellow-400",
   };
 
   const changeEnvironment = (env) => {
@@ -383,11 +383,24 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-md"
             >
-              <img
-                src="/rest-concept.svg"
-                alt="REST Concept Illustration"
-                className="w-full h-auto"
-              />
+              <h4 className="text-2xl font-orbitron font-bold mb-4">
+                Rest Illustration
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Relax",
+                  "Escape",
+                  "Soothe",
+                  "Transform"
+                ].map((symptom, index) => (
+                  <span
+                    key={index}
+                    className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm font-raleway"
+                  >
+                    {symptom}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>
