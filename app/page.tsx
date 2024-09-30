@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import {ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [currentTime, setCurrentTime] = useState("");
@@ -35,7 +34,7 @@ export default function Home() {
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
         >
-          <source src="./video.mp4" type="video/mp4" />
+          <source src="video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -76,12 +75,15 @@ export default function Home() {
       {/* About Section */}
       <section
         id="about"
-        className="min-h-screen flex items-center justify-center py-20"
+        className="min-h-screen items-center justify-center py-20"
       >
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-light mb-8 text-center">Who We Are</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+        <section
+          id="about"
+          className="min-h-screen flex items-center justify-center py-20"
+        >
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-4xl font-light mb-8 text-center">Who We Are</h2>
+            <div className="text-center">
               <p className="text-lg mb-4">
                 Rest Labs is at the forefront of revolutionizing stress
                 management through cutting-edge Virtual Reality technology. We
@@ -95,17 +97,8 @@ export default function Home() {
                 effects of stress in our fast-paced world.
               </p>
             </div>
-            <div className="relative h-64 md:h-full">
-              <Image
-                src="/placeholder.svg"
-                alt="Rest Labs Team"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
-            </div>
           </div>
-        </div>
+        </section>
       </section>
 
       {/* Solutions Section */}
@@ -183,53 +176,6 @@ export default function Home() {
             Investing in stress management is not just good for employees—its
             crucial for business success.
           </p>
-        </div>
-      </section>
-
-      {/* Partners Section */}
-      <section className="min-h-screen flex items-center justify-center py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-light mb-12 text-center">
-            Our Partners
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-            <div className="flex justify-center">
-              <Image
-                src="/placeholder.svg"
-                alt="OpenAI Logo"
-                width={200}
-                height={100}
-                objectFit="contain"
-              />
-            </div>
-            <div className="flex justify-center">
-              <Image
-                src="/placeholder.svg"
-                alt="Anthropic Logo"
-                width={200}
-                height={100}
-                objectFit="contain"
-              />
-            </div>
-            <div className="flex justify-center">
-              <Image
-                src="/placeholder.svg"
-                alt="Oculus Logo"
-                width={200}
-                height={100}
-                objectFit="contain"
-              />
-            </div>
-            <div className="flex justify-center">
-              <Image
-                src="/placeholder.svg"
-                alt="Calm Logo"
-                width={200}
-                height={100}
-                objectFit="contain"
-              />
-            </div>
-          </div>
         </div>
       </section>
 
