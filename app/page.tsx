@@ -20,7 +20,7 @@ export default function Home() {
   const [currentTime, setCurrentTime] = useState("");
   const [activeEnvironment, setActiveEnvironment] = useState<
     "night" | "day" | "rain" | "ocean"
-  >("day");
+  >("night");
   const [showDemo, setShowDemo] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
