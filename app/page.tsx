@@ -436,6 +436,38 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="video" className="py-16 md:py-20 bg-black bg-opacity-80">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-5xl font-orbitron font-bold mb-8 md:mb-16 text-center text-white"
+          >
+            The Experience
+          </motion.h2>
+          <div
+            className="relative w-full max-w-4xl mx-auto"
+            style={{ paddingBottom: "56.25%" }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/PaQH8vySTMs"
+              title="The Experience"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+            ></iframe>
+          </div>
+          <motion.p
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl mt-8 text-center font-raleway font-light text-white"
+          >
+          </motion.p>
+        </div>
+      </section>
+
       {/* Market Insights Section */}
       <section id="insights" className="py-16 md:py-20">
         <div className="container mx-auto px-4">
@@ -551,7 +583,7 @@ export default function Home() {
                 className="w-full max-w-4xl aspect-video bg-gray-800 rounded-lg overflow-hidden"
               >
                 <div className="w-full h-full flex items-center justify-center text-xl md:text-2xl font-raleway">
-                  Interactive Demo Placeholder
+                  Demo in Development Stage 
                 </div>
               </motion.div>
             )}
