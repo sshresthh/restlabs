@@ -45,7 +45,7 @@ export default function Home() {
     night: "bg-gradient-to-b from-black-900 to-black-800",
     day: "bg-gradient-to-b from-green-500 to-green-400",
     rain: "bg-gradient-to-b from-blue-700 to-blue-600",
-    ocean: "bg-gradient-to-b from-yellow-600 to-yellow-500",
+    ocean: "bg-gradient-to-b from-yellow-400 to-yellow-400",
   };
 
   const changeEnvironment = (env: "night" | "day" | "rain" | "ocean") => {
@@ -436,7 +436,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="video" className="py-16 md:py-20 bg-black bg-opacity-80">
+      <section
+        id="video"
+        className={`py-16 md:py-20 ${activeEnvironment} bg-opacity-80`}
+      >
         <div className="container mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0 }}
@@ -464,6 +467,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl mt-8 text-center font-raleway font-light text-white"
           >
+            {/* You can add additional text here if needed */}
           </motion.p>
         </div>
       </section>
@@ -583,7 +587,7 @@ export default function Home() {
                 className="w-full max-w-4xl aspect-video bg-gray-800 rounded-lg overflow-hidden"
               >
                 <div className="w-full h-full flex items-center justify-center text-xl md:text-2xl font-raleway">
-                  Demo in Development Stage 
+                  Demo in Development Stage
                 </div>
               </motion.div>
             )}
